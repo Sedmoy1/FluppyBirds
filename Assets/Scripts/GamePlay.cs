@@ -12,15 +12,13 @@ public class GamePlay : MonoBehaviour
     private  void SetFrequence()
     {
        frequence =  Random.Range(1f,3f);
-       Debug.Log(frequence);
-       
     }
     
 
     void Start()
     {
         SetFrequence();
-        InvokeRepeating("SpawnColum",0f,frequence );
+        InvokeRepeating(nameof(SpawnColum),0f,frequence );
     }
 
     private void SpawnColum()
@@ -28,10 +26,5 @@ public class GamePlay : MonoBehaviour
         SetFrequence();
         Factory.Create();
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
