@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
        [SerializeField] private Button _playGameButton;
-    public Button CloseStorageWindowButton;
 
     
     
@@ -18,6 +17,9 @@ public class MainMenu : MonoBehaviour
     private void CloseGameMenu()
     {
         gameObject.SetActive(false);
+        
+        Time.timeScale = 0f;
+        
     }
 
     private void Start()
@@ -29,4 +31,6 @@ public class MainMenu : MonoBehaviour
   {
         gameObject.SetActive(false);
    }
-}
+
+    
+   }

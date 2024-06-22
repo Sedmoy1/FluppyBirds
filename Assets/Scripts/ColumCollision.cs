@@ -14,6 +14,8 @@ public class ColumCollision : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene("Game");
+            Time.timeScale = 0f;
+           
           //  Sound1.Play();
           ScoreApplicator.Score = 0;
         }
@@ -22,5 +24,15 @@ public class ColumCollision : MonoBehaviour
     public void SetAudioSource(AudioSource source)
     {
   //      Sound1 = source;
+    }
+
+   
+    
+    public void BirhdayCake(int a , int  b , int c)
+    {
+        Console.ReadLine();
+        c = a + b;
+
+
     }
 }

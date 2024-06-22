@@ -9,7 +9,14 @@ public class TriggerZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            
             ScoreApplicator.Score++;
         }
+        
     }
+
+   
+    
+    
+    
 }

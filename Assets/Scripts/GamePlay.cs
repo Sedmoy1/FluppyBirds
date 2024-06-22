@@ -17,6 +17,7 @@ public class GamePlay : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 0f;
         SetFrequence();
         InvokeRepeating(nameof(SpawnColum),0f,frequence );
     }
