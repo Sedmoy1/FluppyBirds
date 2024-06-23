@@ -1,36 +1,18 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class MainMenu : MonoBehaviour
 {
-       [SerializeField] private Button _playGameButton;
-
-    
-    
-    private void OpenGame()
-    {
-        _playGameButton.gameObject.SetActive(true);
-   }
-
-    private void CloseGameMenu()
-    {
-        gameObject.SetActive(false);
-        
-        Time.timeScale = 0f;
-        
-    }
+    [SerializeField] private Button _playGameButton;
 
     private void Start()
-    { 
-      _playGameButton.onClick.AddListener(CloseGameMenu);
+    {
+        _playGameButton.onClick.AddListener(OnPlayGameButtonClicked);
     }
 
-    void OnPlayGameButtonClicked() 
-  {
+    private void OnPlayGameButtonClicked()
+    {
         gameObject.SetActive(false);
-   }
-
-    
-   }
+        Time.timeScale = 1f;
+    }
+}
