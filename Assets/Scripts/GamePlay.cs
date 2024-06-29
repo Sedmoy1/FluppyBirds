@@ -8,18 +8,19 @@ public class GamePlay : MonoBehaviour
     [SerializeField] private MainMenu _mainMenu;
 
     private float frequence;
-    
-    private  void SetFrequence()
+
+    private void SetFrequence()
     {
-       frequence =  Random.Range(1f,3f);
+        frequence = Random.Range(1f, 3f);
     }
-    
+
 
     void Start()
     {
-        Time.timeScale = 0f;
+        _mainMenu.ShowWindow();
+        PauseController.StopGame();
         SetFrequence();
-        InvokeRepeating(nameof(SpawnColum),0f,frequence );
+        InvokeRepeating(nameof(SpawnColum), 0f, frequence);
     }
 
     private void SpawnColum()
@@ -27,5 +28,4 @@ public class GamePlay : MonoBehaviour
         SetFrequence();
         Factory.Create();
     }
-
 }

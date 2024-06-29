@@ -12,7 +12,21 @@ public class MainMenu : MonoBehaviour
 
     private void OnPlayGameButtonClicked()
     {
-        gameObject.SetActive(false);
-        Time.timeScale = 1f;
+        HideWindow();
+
+        PauseController.ResumeGame(); 
     }
+
+    public void ShowWindow()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void HideWindow()
+    {
+       gameObject.SetActive(false); 
+    }
+    
+    
+    
 }
