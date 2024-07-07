@@ -27,8 +27,7 @@ public class MoveColums : MonoBehaviour
 
     public void SetAudioSource(AudioSource sound1)
     {
-        UpCollision.SetAudioSource(sound1);
-        DownCollision.SetAudioSource(sound1);
+     
     }
 
     // Start is called before the first frame update
@@ -39,7 +38,7 @@ public class MoveColums : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * Speed);
+        transform.Translate(Vector3.left * Time.deltaTime * Speed);// Понял что это,не понятны ыекторы
         if (isRelease)
         {
             return;
@@ -48,8 +47,8 @@ public class MoveColums : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            isRelease = true;
-            OnRelease.Invoke(this);
+            isRelease = true;//
+            OnRelease.Invoke(this);//
         }
     }
 }
