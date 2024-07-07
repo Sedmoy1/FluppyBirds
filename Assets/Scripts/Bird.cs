@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bird : MonoBehaviour
 {
+    public GameOverMenu GameOverMenu;
     public Rigidbody2D Rigidbody;
     public float Force = 100f;
     
-   // public AudioSource MainTheme;
-   // public AudioSource Sound1;
-//   public AudioSource Sound1 LoopExpression;
+    private void OnTriggerEnter2D(Collider2D other)
+    { 
+        if (other.CompareTag("Colum"))
+        {
+            PauseController.StopGame();
+            GameOverMenu.ShowWindow();
 
-   // Start is called before the first frame update
-    void Start()
-    {
-         
+        }
     }
+  
 
     // Update is called once per frame
     void Update()
