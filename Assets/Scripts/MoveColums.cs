@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEditor.Timeline;
 using UnityEngine;
 
-public class MoveColums : MonoBehaviour
+public class MoveColums : MonoBehaviour // пУБЛИЧНЫЙ КЛАСС
 {
     public float Speed = 5;
 
-    public ColumCollision UpCollision;
+    public ColumCollision UpCollision; //дОБАВЛЕННИЕ кОЛЛИЗИИ
     public ColumCollision DownCollision;
     public Action<MoveColums> OnRelease;
 
@@ -44,7 +44,7 @@ public class MoveColums : MonoBehaviour
             return;
         }
 
-        timer -= Time.deltaTime;
+        timer -= Time.deltaTime;// Отнимается Время от переменной timer
         if (timer < 0)
         {
             isRelease = true;//

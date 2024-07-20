@@ -10,12 +10,13 @@ public class Bird : MonoBehaviour
     public Rigidbody2D Rigidbody;
     public float Force = 100f;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) 
     { 
         if (other.CompareTag("Colum"))
         {
-            PauseController.StopGame();
+            PauseController.StopGame();// Стопит игру
             GameOverMenu.ShowWindow();
+            
 
         }
     }
@@ -26,7 +27,7 @@ public class Bird : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Rigidbody.AddForce(Vector2.up * Force);
+            Rigidbody.AddForce(Vector2.up * Force);// Вектор ум На скорость
         }
     }
 }

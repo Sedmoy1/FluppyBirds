@@ -14,7 +14,7 @@ public class ColumFactory : MonoBehaviour
     {
         if (Pool.Count > 0)
         {
-            var colum = Pool.Dequeue();
+            var colum = Pool.Dequeue();// ?
             ColumSetup(colum);
         }
         else
@@ -25,7 +25,7 @@ public class ColumFactory : MonoBehaviour
 
     private void ReleaseColum(MoveColums colum)
     {
-        colum.OnRelease -= ReleaseColum;
+        colum.OnRelease -= ReleaseColum;// -
         colum.transform.position = SpawnPoint.transform.position;
         Pool.Enqueue(colum);
     }
